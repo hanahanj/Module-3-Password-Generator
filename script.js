@@ -15,6 +15,35 @@
 
 // then log them to the password ID in the html 
 
+// Get references to the #generate element
+var generateBtn = document.querySelector("#generate");
+
+// Set lowercase Array
+let low = 'abcdefghijklmnopqrstuvwxyz';
+let lowArray = low.split("");
+
+console.log("lowArray =" + lowArray);
+
+// Set uppercase Array
+let high = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+let highArray = high.split("");
+
+console.log("highArray =" + highArray);
+
+// Set number Array
+let num = '0123456789';
+let numArray = num.split("");
+
+console.log("numArray =" + numArray);
+
+// Set number Array
+let spec = ' !#$%&()*+,-.:;<>?@[]/^_{}~';
+let specArray = spec.split("");
+
+console.log("specArray =" + specArray);
+
+
+// On load use prompts to generate password components 
 
 length = window.prompt("How long do you want your password to be", "1 to 128 characters");
 console.log("length = " + length);
@@ -26,8 +55,9 @@ numbers = window.prompt("Do you want to use numbers", "Yes or No?");
 console.log("numbers = " + numbers);
 special = window.prompt("Do you want to use special characters", "Yes or No?");
 console.log("special characters = " + special);
-// Get references to the #generate element
-var generateBtn = document.querySelector("#generate");
+
+var lowercase =  []
+
 
 // Write password to the #password input
 function writePassword() {

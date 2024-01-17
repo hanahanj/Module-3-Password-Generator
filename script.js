@@ -55,23 +55,43 @@ console.log("numbers = " + numbers);
 special = window.prompt("Do you want to use special characters", "Yes or No?");
 console.log("special characters = " + special);
 
-
+// generate a string of all characters 
 if (lowercase && uppercase && numbers && special == 'yes'){
-
 var charArray = lowArray.concat(highArray, numArray, specArray);
-
 }
 
 console.log(charArray);
 
 // Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+function writePassword(array, length) {
+var result = '';
 
-  passwordText.value = password;
+// chose characters from random locations in charArray and form a string
+
+  for (let i = 0; i < length; i++) {
+    var randomIndex = Math.floor(Math.random() * charArray.length);
+    result += charArray[randomIndex];
+    
+  }
+
+  console.log(result);
+
+// generates passwords but not using length and generating too many
+  const randomPass = writePassword(charArray, 10);
+  console.log('Randomly generated Password:', randomPass);
+
+  // var password = result;
+  // console.log(password);
+  // var passwordText = document.querySelector("#password");
+
+  // // passwordText.value = password;
+
+  return result;
+  
 
 }
+
+
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);

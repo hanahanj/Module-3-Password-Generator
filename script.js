@@ -42,7 +42,6 @@ let specArray = spec.split("");
 
 console.log("specArray =" + specArray);
 
-
 // On load use prompts to generate password components 
 
 length = window.prompt("How long do you want your password to be", "1 to 128 characters");
@@ -56,8 +55,14 @@ console.log("numbers = " + numbers);
 special = window.prompt("Do you want to use special characters", "Yes or No?");
 console.log("special characters = " + special);
 
-var lowercase =  []
 
+if (lowercase && uppercase && numbers && special == 'yes'){
+
+var charArray = lowArray.concat(highArray, numArray, specArray);
+
+}
+
+console.log(charArray);
 
 // Write password to the #password input
 function writePassword() {

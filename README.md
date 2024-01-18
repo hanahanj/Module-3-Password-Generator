@@ -1,6 +1,9 @@
 # Password-Generator
 Bootcamp Module 3 Challange 
 
+## Description
+An application that allows a user to generate a custom password by controling the number of characters and what types of charcters are included (lowercase, uppercase, numerals, special characters).
+
 ## Criteria
 
 GIVEN I need a new, secure password
@@ -19,3 +22,6 @@ THEN a password is generated that matches the selected criteria
 WHEN the password is generated
 THEN the password is either displayed in an alert or written to the page
 
+Link to live site: https://hanahanj.github.io/Password-Generator/
+
+![Screencap](https://github.com/hanahanj/Password-Generator/blob/main/pass-gen-thumb.png) 

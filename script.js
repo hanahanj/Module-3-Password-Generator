@@ -57,21 +57,24 @@ var charArray = [];
 
 // generate a string of all characters 
 if (lowercase == 'yes'){
+  document.getElementById("lowercase").setAttribute("style", "color:green; font-weight:bold");
 charArray = charArray.concat(lowArray);
 } 
 
 if (uppercase == 'yes'){
+  document.getElementById("uppercase").setAttribute("style", "color:green; font-weight:bold");
 charArray = charArray.concat(highArray);
 } 
 
 if (numbers == 'yes'){
+  document.getElementById("numbers").setAttribute("style", "color:green; font-weight:bold");
 charArray = charArray.concat(numArray);
 } 
 
 if (special == 'yes'){
+  document.getElementById("special").setAttribute("style", "color:green; font-weight:bold");
 charArray = charArray.concat(specArray);
 } 
-
 
 
 console.log(charArray);
@@ -86,14 +89,8 @@ console.log(charArray);
   }
 
   console.log("password =" + result);
-
-
   document.getElementById("password").innerHTML = result;
-
-
-
 }
-
 
 
 // Add event listener to generate button

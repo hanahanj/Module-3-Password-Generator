@@ -29,30 +29,53 @@ console.log("specArray =" + specArray);
 
 // On load use prompts to generate password components 
 
-passlength = window.prompt("How long do you want your password to be", "1 to 128 characters");
-console.log("passlength = " + passlength);
-lowercase = window.prompt("Do you want to use lowercase characters", "Yes or No?");
-console.log("lowercase = " + lowercase);
-uppercase = window.prompt("Do you want to use uppercase characters", "Yes or No?")
-console.log("uppercase = " + uppercase);
-numbers = window.prompt("Do you want to use numbers", "Yes or No?");
-console.log("numbers = " + numbers);
-special = window.prompt("Do you want to use special characters", "Yes or No?");
-console.log("special characters = " + special);
-
-// generate a string of all characters 
-if (lowercase && uppercase && numbers && special == 'yes'){
-var charArray = lowArray.concat(highArray, numArray, specArray);
-}
-
-console.log(charArray);
-
-var randomPass = writePassword(charArray, passlength);
-  console.log('Randomly generated Password:', randomPass);
 
 // Write password to the #password input
 function writePassword(Array, length) {
 var result = '';
+
+passlength = window.prompt("How long do you want your password to be", "1 to 128 characters");
+console.log("passlength = " + passlength);
+
+lowercase = window.prompt("Do you want to use lowercase characters", "Yes or No?");
+lowercase = lowercase.toLowerCase()
+console.log("lowercase = " + lowercase);
+
+uppercase = window.prompt("Do you want to use uppercase characters", "Yes or No?")
+uppercase = uppercase.toLowerCase()
+console.log("uppercase = " + uppercase);
+
+numbers = window.prompt("Do you want to use numbers", "Yes or No?");
+numbers = numbers.toLowerCase()
+console.log("numbers = " + numbers);
+
+special = window.prompt("Do you want to use special characters", "Yes or No?");
+special = special.toLowerCase()
+console.log("special characters = " + special);
+
+var charArray = [];
+
+// generate a string of all characters 
+if (lowercase == 'yes'){
+charArray = charArray.concat(lowArray);
+} 
+
+if (uppercase == 'yes'){
+charArray = charArray.concat(highArray);
+} 
+
+if (numbers == 'yes'){
+charArray = charArray.concat(numArray);
+} 
+
+if (special == 'yes'){
+charArray = charArray.concat(specArray);
+} 
+
+
+
+console.log(charArray);
+
 
 // chose characters from random locations in charArray and form a string
 
@@ -64,17 +87,10 @@ var result = '';
 
   console.log("password =" + result);
 
-// generates passwords but generating too many, need to generate 1
-  
 
-  // var password = result;
-  // console.log(password);
-  // var passwordText = document.querySelector("#password");
-
-  // passwordText.value = result;
   document.getElementById("password").innerHTML = result;
 
-  // return result;
+
 
 }
 

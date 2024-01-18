@@ -1,19 +1,4 @@
-// Assignment code here
 
-
-
-// When I click the gnerate password button it opens a series of prompts
-// prompt 1 asks how long I want the password to be
-// Prompt 2 asks if I want to use lowercase letters
-// prompt 3 asks if i want to use uppercase letters
-// prompt 4 asks if i want to use numbers 
-// propt 5 asks if I want to use special characters
-
-// based on those responses a random number generator is used to chose random items from each of the arrays 
-
-// then assemble them into a new String
-
-// then log them to the password ID in the html 
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
@@ -44,8 +29,8 @@ console.log("specArray =" + specArray);
 
 // On load use prompts to generate password components 
 
-length = window.prompt("How long do you want your password to be", "1 to 128 characters");
-console.log("length = " + length);
+passlength = window.prompt("How long do you want your password to be", "1 to 128 characters");
+console.log("passlength = " + passlength);
 lowercase = window.prompt("Do you want to use lowercase characters", "Yes or No?");
 console.log("lowercase = " + lowercase);
 uppercase = window.prompt("Do you want to use uppercase characters", "Yes or No?")
@@ -62,32 +47,34 @@ var charArray = lowArray.concat(highArray, numArray, specArray);
 
 console.log(charArray);
 
+var randomPass = writePassword(charArray, passlength);
+  console.log('Randomly generated Password:', randomPass);
+
 // Write password to the #password input
-function writePassword(array, length) {
+function writePassword(Array, length) {
 var result = '';
 
 // chose characters from random locations in charArray and form a string
 
-  for (let i = 0; i < length; i++) {
+  for (let i = 0; i < passlength; i++) {
     var randomIndex = Math.floor(Math.random() * charArray.length);
     result += charArray[randomIndex];
     
   }
 
-  console.log(result);
+  console.log("password =" + result);
 
-// generates passwords but not using length and generating too many
-  const randomPass = writePassword(charArray, 10);
-  console.log('Randomly generated Password:', randomPass);
+// generates passwords but generating too many, need to generate 1
+  
 
   // var password = result;
   // console.log(password);
   // var passwordText = document.querySelector("#password");
 
-  // // passwordText.value = password;
+  // passwordText.value = result;
+  document.getElementById("password").innerHTML = result;
 
-  return result;
-  
+  // return result;
 
 }
 
